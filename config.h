@@ -69,7 +69,7 @@ static const char *web[] = { "brave", NULL };
 static const char *poweroff[] = { "poweroff", NULL };
 static const char *reboot[] = { "reboot", NULL };
 static const char *filemanager[] = { "thunar", NULL };
-static const char *office[] = { "libreoffice", NULL };
+static const char *code[] = { "vscodium", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,			   XF86XK_MonBrightnessUp, spawn,	       {.v = light_up} },
@@ -83,7 +83,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_p,	   spawn,          {.v = poweroff } },
 	{ MODKEY,			XK_r,	   spawn,	   {.v = reboot } },
 	{ MODKEY,			XK_n,	   spawn,	   {.v = filemanager } },
-	{ MODKEY,			XK_o,	   spawn,	   {.v = office } },
+	{ MODKEY,			XK_o,	   spawn,	   {.v = code } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
