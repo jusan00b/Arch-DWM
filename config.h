@@ -6,7 +6,7 @@ static const char *light_down[] = { "/usr/bin/light",   "-U", "5", NULL };
 static const char *upvol[]      = { "/usr/bin/pactl",   "set-sink-volume", "0",      "+5%",      NULL };
 static const char *downvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "0",      "-5%",      NULL };
 static const char *mutevol[]    = { "/usr/bin/pactl",   "set-sink-mute",   "0",      "toggle",   NULL };
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -65,7 +65,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_gray4, "-sb", col_pink, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-
+static const char *web[] = { "brave", NULL };
+static const char *poweroff[] = { "poweroff", NULL };
+static const char *reboot[] = { "reboot", NULL };
+static const char *filemanager[] = { "thunar", NULL };
+static const char *office[] = { "libreoffice", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,			   XF86XK_MonBrightnessUp, spawn,	       {.v = light_up} },
@@ -73,8 +77,13 @@ static const Key keys[] = {
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
+	{ MODKEY,			XK_w,	   spawn, 	   {.v = web } },
+	{ MODKEY,			XK_p,	   spawn,          {.v = poweroff } },
+	{ MODKEY,			XK_r,	   spawn,	   {.v = reboot } },
+	{ MODKEY,			XK_n,	   spawn,	   {.v = filemanager } },
+	{ MODKEY,			XK_o,	   spawn,	   {.v = office } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -84,7 +93,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_x,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
