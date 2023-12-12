@@ -69,7 +69,7 @@ static const char *web[] = { "brave", NULL };
 static const char *poweroff[] = { "poweroff", NULL };
 static const char *reboot[] = { "reboot", NULL };
 static const char *filemanager[] = { "thunar", NULL };
-static const char *code[] = { "nvim.sh", NULL }; /* nvim spwan script*/
+static const char *code[] = { "st", "-e", "nvim", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,			   XF86XK_MonBrightnessUp, spawn,	       {.v = light_up} },
