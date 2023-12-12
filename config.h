@@ -69,7 +69,7 @@ static const char *web[] = { "brave", NULL };
 static const char *poweroff[] = { "poweroff", NULL };
 static const char *reboot[] = { "reboot", NULL };
 static const char *filemanager[] = { "thunar", NULL };
-static const char *code[] = { "vscodium", NULL };
+static const char *code[] = { "nvim.sh", NULL }; /* nvim spwan script*/
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,			   XF86XK_MonBrightnessUp, spawn,	       {.v = light_up} },
@@ -78,12 +78,12 @@ static const Key keys[] = {
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_w,	   spawn, 	   {.v = web } },
-	{ MODKEY,			XK_p,	   spawn,          {.v = poweroff } },
-	{ MODKEY,			XK_r,	   spawn,	   {.v = reboot } },
-	{ MODKEY,			XK_n,	   spawn,	   {.v = filemanager } },
-	{ MODKEY,			XK_c,	   spawn,	   {.v = code } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			            XK_w,	   spawn, 	   {.v = web } },
+	{ MODKEY,			            XK_p,	   spawn,          {.v = poweroff } },
+	{ MODKEY,			            XK_r,	   spawn,	   {.v = reboot } },
+	{ MODKEY,			            XK_n,	   spawn,	   {.v = filemanager } },
+	{ MODKEY,			            XK_c,	   spawn,	   {.v = code } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
